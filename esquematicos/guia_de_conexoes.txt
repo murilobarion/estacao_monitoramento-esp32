@@ -1,0 +1,40 @@
+Guia de Conexões - Estação de Monitoramento com ESP32
+
+--- ALIMENTAÇÃO PRINCIPAL (PROTOBOARD) ---
+- Pino 3V3 do ESP32 -> Linha de Alimentação Positiva (+) de 3.3V da protoboard.
+- Pino GND do ESP32 -> Linha de Alimentação Negativa (-) da protoboard (GND).
+
+--- SENSOR DE TEMPERATURA E UMIDADE (DHT11) ---
+- Pino 'S' (Sinal) -> Pino D23 do ESP32
+- Pino do Meio (VCC) -> Linha Positiva (+) de 3.3V
+- Pino '-' (GND) -> Linha Negativa (-)
+
+--- SENSOR DE LUMINOSIDADE (LDR) ---
+- Perna 1 do LDR -> Linha Positiva (+) de 3.3V
+- Perna 2 do LDR -> Ponto de Junção na protoboard
+- Ponto de Junção -> Conectado ao Pino D34 do ESP32
+- Ponto de Junção -> Conectado a uma perna do Resistor de 10kΩ
+- Outra perna do Resistor de 10kΩ -> Linha Negativa (-)
+
+--- DISPLAY OLED (I2C) ---
+- Pino GND do display -> Linha Negativa (-)
+- Pino VDD do display -> Linha Positiva (+) de 3.3V
+- Pino SDA do display -> Pino D21 do ESP32
+- Pino SCK do display -> Pino D22 do ESP32
+
+--- MÓDULO CLIMÔMETRO (LEDs Individuais) ---
+Conecte o terminal menor (cátodo) de cada LED a um resistor de 220Ω. A outra ponta do resistor vai para a Linha Negativa (-).
+O terminal maior (ânodo) de cada LED é conectado conforme abaixo:
+- LED Azul -> Pino D25 do ESP32
+- LED Verde -> Pino D26 do ESP32
+- LED Vermelho -> Pino D27 do ESP32
+
+--- MÓDULO INDICADOR DE CONFORTO (SEMÁFORO) ---
+- Pino GND do módulo -> Linha Negativa (-)
+- Pino 'G' (Verde) -> Pino D5 do ESP32
+- Pino 'Y' (Amarelo) -> Pino D18 do ESP32
+- Pino 'R' (Vermelho) -> Pino D19 do ESP32
+
+--- LED DE STATUS DO SISTEMA ---
+Conecte o terminal menor (cátodo) do LED Branco a um resistor de 220Ω. A outra ponta do resistor vai para a Linha Negativa (-).
+- Terminal maior (ânodo) do LED Branco -> Pino D2 do ESP32
